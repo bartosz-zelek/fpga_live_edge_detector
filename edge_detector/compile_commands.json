@@ -1,0 +1,26 @@
+[
+  {
+    "directory": "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "-I../config -I../../Vitis_Libraries/vision/L1/include -I ./ -D__SDSVHLS__ -std=c++14",
+      "-c",
+      "C:/Users/barto/Documents/edge_detector/axiconv/xf_axiconv_accel.cpp"
+    ],
+    "file": "C:/Users/barto/Documents/edge_detector/axiconv/xf_axiconv_accel.cpp"
+  },
+  {
+    "directory": "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\include",
+      "-I../config -I../../opencv/build/install/include -I../../Vitis_Libraries/vision/L1/include -I ./ -D__SDSVHLS__ -std=c++14",
+      "-c",
+      "C:/Users/barto/Documents/edge_detector/axiconv/xf_axiconv_tb.cpp"
+    ],
+    "file": "C:/Users/barto/Documents/edge_detector/axiconv/xf_axiconv_tb.cpp"
+  }
+]

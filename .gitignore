@@ -1,0 +1,45 @@
+# Ignore build output directory
+build/
+export/
+
+# Ignore object files and dependent files
+*.o
+*.d
+
+#Ignore logs folder and log files
+logs/
+*.log
+
+#Ignore lock files
+*.lock
+
+*.bin
+*.pdi
+*.peers.ini
+*.repo.yaml
+*.vitisWorkspace.json
+
+.theia/
+.wsdata/
+
+# Vitis HLS build artifacts
+.autopilot/
+.debug/
+csim/
+sim/
+syn/
+impl/
+hls/
+*.hlscompile_summary
+*.hlsrun_cosim_summary
+*.hlsrun_csim_summary
+reports/
+
+# Clangd cache
+.cache/
+
+# Generated files
+*.bc
+*.idx
+*.exe
+*.pb3
