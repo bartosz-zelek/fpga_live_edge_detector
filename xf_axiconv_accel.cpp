@@ -27,14 +27,20 @@ void axiconv_accel(hls::stream<ap_axiu<8, 1, 1, 1> >& src, hls::stream<ap_axiu<8
     xf::cv::Mat<OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH_OUT_GX> _dstgx(rows, cols);
     xf::cv::Mat<OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH_OUT_GY> _dstgy(rows, cols);
 
+    xf::cv::Mat<OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH_OUT_GX> _dst_combined(rows, cols);
+
     #pragma HLS dataflow
 
     xf::cv::AXIvideo2xfMat(src, src_mat);
 
     xf::cv::Sobel<XF_BORDER_CONSTANT, FILTER_WIDTH, IN_TYPE, OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_USE_URAM,
                   XF_CV_DEPTH_IN_1, XF_CV_DEPTH_OUT_GX, XF_CV_DEPTH_OUT_GY>(src_mat, _dstgx, _dstgy);
+                  
+    xf::cv::magnitude<NORM_TYPE, OUT_TYPE, OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, 
+                  XF_CV_DEPTH_OUT_GX, XF_CV_DEPTH_OUT_GY, XF_CV_DEPTH_OUT>(
+                  _dstgx, _dstgy, _dst_combined);
 
-    xf::cv::xfMat2AXIvideo(_dstgx, dst);
+    xf::cv::xfMat2AXIvideo(_dst_combined, dst);
 
     return;
 }

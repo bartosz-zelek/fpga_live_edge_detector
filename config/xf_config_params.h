@@ -25,6 +25,8 @@
 #include "ap_int.h"
 #include "imgproc/xf_sobel.hpp"
 
+#include "core/xf_magnitude.hpp"
+
 /* config width and height */
 #define XF_HEIGHT 720
 #define XF_WIDTH 1280
@@ -32,6 +34,7 @@
 #define XF_CV_DEPTH_IN_1 2
 #define XF_CV_DEPTH_OUT_GX 2
 #define XF_CV_DEPTH_OUT_GY 2
+#define XF_CV_DEPTH_OUT 2
 
 /*  Set Filter size  */
 
@@ -62,6 +65,8 @@
 
 #define INPUT_PTR_WIDTH 8
 #define OUTPUT_PTR_WIDTH 8
+
+#define NORM_TYPE XF_L1NORM
 
 void axiconv_accel(hls::stream<ap_axiu<8, 1, 1, 1> >& _src,
                    hls::stream<ap_axiu<8, 1, 1, 1> >& _dst,
