@@ -16,31 +16,42 @@
 
 #include "xf_axiconv_accel_config.h"
 
-void axiconv_accel(hls::stream<ap_axiu<8, 1, 1, 1> >& src, hls::stream<ap_axiu<8, 1, 1, 1> >& dst, int rows, int cols) {
+void axiconv_accel(hls::stream<ap_axiu<_W, 1, 1, 1> >& src, hls::stream<ap_axiu<_W, 1, 1, 1> >& dst, int rows, int cols) {
     #pragma HLS INTERFACE axis port=src
     #pragma HLS INTERFACE axis port=dst
     #pragma HLS INTERFACE s_axilite port=rows               
     #pragma HLS INTERFACE s_axilite port=cols               
     #pragma HLS INTERFACE s_axilite port=return
 
-    xf::cv::Mat<IN_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH_IN_1> src_mat(rows, cols);
-    xf::cv::Mat<OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH_OUT_GX> _dstgx(rows, cols);
-    xf::cv::Mat<OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH_OUT_GY> _dstgy(rows, cols);
+    xf::cv::Mat<RGB, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH> src_mat(rows, cols);
 
-    xf::cv::Mat<OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH_OUT_GX> _dst_combined(rows, cols);
+    xf::cv::Mat<GRAY, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH> gray_mat(rows, cols);
+
+    xf::cv::Mat<GRAY, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH> _dstgx(rows, cols);
+    xf::cv::Mat<GRAY, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH> _dstgy(rows, cols);
+
+    xf::cv::Mat<GRAY, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH> _dst_combined(rows, cols);
+
+    xf::cv::Mat<RGB, XF_HEIGHT, XF_WIDTH, NPPCX, XF_CV_DEPTH> dst_mat(rows, cols);
 
     #pragma HLS dataflow
 
     xf::cv::AXIvideo2xfMat(src, src_mat);
 
-    xf::cv::Sobel<XF_BORDER_CONSTANT, FILTER_WIDTH, IN_TYPE, OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, XF_USE_URAM,
-                  XF_CV_DEPTH_IN_1, XF_CV_DEPTH_OUT_GX, XF_CV_DEPTH_OUT_GY>(src_mat, _dstgx, _dstgy);
+    xf::cv::rgb2gray<RGB, GRAY, XF_HEIGHT, XF_WIDTH, NPPCX, 
+                     XF_CV_DEPTH, XF_CV_DEPTH>(src_mat, gray_mat);
+
+    xf::cv::Sobel<XF_BORDER_CONSTANT, FILTER_WIDTH, GRAY, GRAY, XF_HEIGHT, XF_WIDTH, NPPCX, XF_USE_URAM,
+                  XF_CV_DEPTH, XF_CV_DEPTH, XF_CV_DEPTH>(gray_mat, _dstgx, _dstgy);
                   
-    xf::cv::magnitude<NORM_TYPE, OUT_TYPE, OUT_TYPE, XF_HEIGHT, XF_WIDTH, NPPCX, 
-                  XF_CV_DEPTH_OUT_GX, XF_CV_DEPTH_OUT_GY, XF_CV_DEPTH_OUT>(
+    xf::cv::magnitude<NORM_TYPE, GRAY, GRAY, XF_HEIGHT, XF_WIDTH, NPPCX, 
+                  XF_CV_DEPTH, XF_CV_DEPTH, XF_CV_DEPTH>(
                   _dstgx, _dstgy, _dst_combined);
 
-    xf::cv::xfMat2AXIvideo(_dst_combined, dst);
+    xf::cv::gray2rgb<GRAY, RGB, XF_HEIGHT, XF_WIDTH, NPPCX,
+                     XF_CV_DEPTH, XF_CV_DEPTH>(_dst_combined, dst_mat);
+
+    xf::cv::xfMat2AXIvideo(dst_mat, dst);
 
     return;
 }

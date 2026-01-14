@@ -1,0 +1,271 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\axiconv_accel.hlsrun_impl_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "12/19/25 21:40:21",
+ "timestampMillis": "945263204",
+ "buildStep": {
+  "cmdId": "a17bdb8b-e7ad-41a8-8c2d-53425ebec97f",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\logs\\axiconv_accel.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2024.1/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --impl --config C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\hls_config.cfg --work_dir axiconv_accel ",
+  "args": [
+   "--mode",
+   "hls",
+   "--impl",
+   "--config",
+   "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\hls_config.cfg",
+   "--work_dir",
+   "axiconv_accel"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:40:21",
+ "timestampMillis": "945263205",
+ "status": {
+  "cmdId": "a17bdb8b-e7ad-41a8-8c2d-53425ebec97f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267236",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IMPL",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "axiconv_accel",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\xf_axiconv_accel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267237",
+ "buildStep": {
+  "cmdId": "73c668cd-b107-467a-b565-f8a1400d1c99",
+  "name": "export_design",
+  "logFile": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\hls.log",
+  "commandLine": "export_design -flow impl",
+  "args": [
+   "-flow",
+   "impl"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267237",
+ "status": {
+  "cmdId": "73c668cd-b107-467a-b565-f8a1400d1c99",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267239",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\impl\\verilog",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267239",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\impl\\report\\verilog\\export_syn.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267240",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\impl\\report\\verilog\\export_syn.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267240",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\impl\\verilog",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267241",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\impl\\report\\verilog\\export_impl.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:40:25",
+ "timestampMillis": "945267241",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\impl\\report\\verilog\\export_impl.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:44:18",
+ "timestampMillis": "945500124",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:44:18",
+ "timestampMillis": "945500125",
+ "report": {
+  "path": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:44:18",
+ "timestampMillis": "945500125",
+ "status": {
+  "cmdId": "73c668cd-b107-467a-b565-f8a1400d1c99",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:44:18",
+ "timestampMillis": "945500245",
+ "status": {
+  "cmdId": "a17bdb8b-e7ad-41a8-8c2d-53425ebec97f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:44:18",
+ "timestampMillis": "945500245",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:44:18",
+ "timestampMillis": "945500245",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

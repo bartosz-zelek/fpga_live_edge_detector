@@ -27,49 +27,33 @@
 
 #include "core/xf_magnitude.hpp"
 
+#include "imgproc/xf_cvt_color.hpp"
+
+#define _W 24
+
 /* config width and height */
 #define XF_HEIGHT 720
 #define XF_WIDTH 1280
 
-#define XF_CV_DEPTH_IN_1 2
-#define XF_CV_DEPTH_OUT_GX 2
-#define XF_CV_DEPTH_OUT_GY 2
-#define XF_CV_DEPTH_OUT 2
+#define XF_CV_DEPTH 2
 
 /*  Set Filter size  */
-
-#define FILTER_SIZE_3 1
-#define FILTER_SIZE_5 0
-#define FILTER_SIZE_7 0
-
-#if FILTER_SIZE_3
 #define FILTER_WIDTH 3
-#elif FILTER_SIZE_5
-#define FILTER_WIDTH 5
-#elif FILTER_SIZE_7
-#define FILTER_WIDTH 7
-#endif
 
 #define XF_USE_URAM 0
 
-#define GRAY 1
-#define RGB 0
-
 #define NPPCX XF_NPPC1
 
-#define IN_TYPE XF_8UC1
-#define OUT_TYPE XF_8UC1
-
-#define CV_IN_TYPE CV_8UC1
-#define CV_OUT_TYPE CV_8UC1
+#define RGB XF_8UC3
+#define GRAY XF_8UC1
 
 #define INPUT_PTR_WIDTH 8
 #define OUTPUT_PTR_WIDTH 8
 
 #define NORM_TYPE XF_L1NORM
 
-void axiconv_accel(hls::stream<ap_axiu<8, 1, 1, 1> >& _src,
-                   hls::stream<ap_axiu<8, 1, 1, 1> >& _dst,
+void axiconv_accel(hls::stream<ap_axiu<_W, 1, 1, 1> >& _src,
+                   hls::stream<ap_axiu<_W, 1, 1, 1> >& _dst,
                    int rows,
                    int cols);
 

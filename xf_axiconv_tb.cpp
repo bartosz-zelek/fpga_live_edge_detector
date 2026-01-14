@@ -9,8 +9,6 @@
 
 using namespace std;
 
-#define _W 8
-
 int main(int argc, char** argv) {
     if (argc != 3) {
         fprintf(stderr, "Invalid Number of Arguments!\nUsage: <executable> <image> <ref>\n");
@@ -35,7 +33,7 @@ int main(int argc, char** argv) {
 
     int rows = img.rows;
     int cols = img.cols;
-    cv::Mat out_img(rows, cols, CV_OUT_TYPE);
+    cv::Mat out_img(rows, cols, GRAY);
 
     // convert input to axiStream
     hls::stream<ap_axiu<_W, 1, 1, 1> > _src;

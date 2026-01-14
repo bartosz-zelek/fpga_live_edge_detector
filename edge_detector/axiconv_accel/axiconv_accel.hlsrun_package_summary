@@ -1,0 +1,159 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\axiconv_accel.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "12/19/25 21:39:04",
+ "timestampMillis": "945185413",
+ "buildStep": {
+  "cmdId": "9d533626-fc82-4e2a-91e1-ccc6272c0325",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\logs\\axiconv_accel.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2024.1/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --package --config C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\hls_config.cfg --work_dir axiconv_accel ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\hls_config.cfg",
+   "--work_dir",
+   "axiconv_accel"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:39:04",
+ "timestampMillis": "945185413",
+ "status": {
+  "cmdId": "9d533626-fc82-4e2a-91e1-ccc6272c0325",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "12/19/25 21:39:08",
+ "timestampMillis": "945189424",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "axiconv_accel",
+     "file": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\axiconv_accel.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\xf_axiconv_accel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "12/19/25 21:39:08",
+ "timestampMillis": "945189425",
+ "buildStep": {
+  "cmdId": "7dde7c31-1d0b-4433-817f-2365700055ad",
+  "name": "export_design",
+  "logFile": "C:/Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector\\axiconv_accel\\hls\\hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\barto\\Documents\\edge_detector\\axiconv\\edge_detector"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:39:08",
+ "timestampMillis": "945189426",
+ "status": {
+  "cmdId": "7dde7c31-1d0b-4433-817f-2365700055ad",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:39:29",
+ "timestampMillis": "945210620",
+ "status": {
+  "cmdId": "7dde7c31-1d0b-4433-817f-2365700055ad",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/19/25 21:39:29",
+ "timestampMillis": "945210731",
+ "status": {
+  "cmdId": "9d533626-fc82-4e2a-91e1-ccc6272c0325",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:39:29",
+ "timestampMillis": "945210732",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/19/25 21:39:29",
+ "timestampMillis": "945210733",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
